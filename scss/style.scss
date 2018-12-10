@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500%7CRoboto:400,900');
+
+@import "normalize";
+@import "layout";
+@import "slick";
+
+$primary-color:#ffcc00;
+$text-color: #333333;
+$light-gray:#898f8f;
+$dark-gray:#666;
+
+$base-font-family: 'Raleway',
+sans-serif;
+$header-font-family: 'Roboto',
+sans-serif;
+
+body {
+	font: 400 16px/1.5 $base-font-family;
+	color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 20px;
+	font-family: $header-font-family;
+	font-weight: 900;
+}
+
+a {
+	color: $primary-color;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: $text-color;
+	}
+}
+
+/* Layout */
+.ba-container {
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 1200px;
+}
+
+/* Typography */
+a,
+input[type="submit"],
+input[type="button"],
+button {
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button {
+	display: inline-block;
+
+	&:hover,
+	&:focus {
+		color: #000;
+	}
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+	transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+.ba-section {
+	padding: 100px 0;
+}
+
+.ba-section-title {
+	text-align: center;
+	color: $primary-color;
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 44px;
+	font: 900 60px/1 $header-font-family;
+
+	&:after {
+		content: '';
+		display: block;
+		height: 1px;
+		max-width: 400px;
+		background-color: $primary-color;
+		margin: 45px auto 0;
+	}
+
+	&__icon {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%, 50%);
+		fill: $primary-color;
+		padding: 0 10px;
+		box-sizing: content-box;
+		background-color: #fff;
+	}
+}
+
+.ba-section-suptitle {
+	text-align: center;
+	text-transform: uppercase;
+	font: 400 18px/1 $base-font-family;
+	color: $dark-gray;
+	margin-top: 26px;
+	margin-bottom: 8px;
+}
+
+.ba-crewman {
+	display: flex;
+	align-items: center;
+
+	@media screen and (max-width: 768px) {
+		display: block;
+	}
+
+	&__col-img {
+		flex-basis: 50%;
+		padding: 83px 84px 10px 83px;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+
+		@media screen and (max-width: 768px) {
+			padding: 20px;
+		}
+
+		img {
+			border: 1px solid $primary-color;
+			display: block;
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	&__img-wrap {
+		border: 1px solid $primary-color;
+		padding: 10px;
+		position: relative;
+
+		&:before,
+		&:after {
+			z-index: 0;
+			position: absolute;
+			content: '';
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			background: #fff;
+			transform: rotate(45deg);
+		}
+	}
+
+	&__col-info {
+		flex-basis: 50%;
+		padding: 90px 46px 90px 84px;
+		text-align: center;
+		border-left: 1px solid $primary-color;
+
+		@media (max-width: 768px) {
+			border-left: none;
+			padding: 30px;
+			border-top: 1px solid $primary-color;
+			margin-top: 30px;
+			position: relative;
+			z-index: 2;
+		}
+	}
+}
+
+.slick-dots {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li+li {
+		margin-left: 5px;
+	}
+
+	button {
+		border-radius: 50%;
+		padding: 0;
+		width: 10px;
+		height: 10px;
+		outline: none;
+		background: $primary-color;
+		border: none;
+
+		&:active {
+			background: white;
+			border: 1px solid $primary-color;
+		}
+	}
+}
+
+.slick-active {
+	button {
+		background: white;
+		border: 1px solid $primary-color;
+	}
+}
+
+.ba-team-slider {
+	position: relative;
+
+	button {
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.ba-slider__prev {
+	position: absolute;
+	top: 40%;
+	left: 0;
+	color: $primary-color;
+	font-size: 50px;
+	background: none;
+	border: none;
+	&:focus, &:hover{
+		color:$primary-color;
+	}
+}
+
+.ba-slider__next {
+	position: absolute;
+	top: 40%;
+	right: 0;
+	color: $primary-color;
+	font-size: 50px;
+	background: none;
+	border: none;
+	&:focus, &:hover{
+		color:$primary-color;
+	}
+}
